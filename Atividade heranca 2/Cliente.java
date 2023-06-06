@@ -1,51 +1,29 @@
-import java.util.ArrayList;
-
 public abstract class Cliente {
     private String nome, telefone, cpf, email;
-    private ArrayList<Publicacao> listaEmprestimo;
-    private boolean tipoUsuario = false;
-
-    public Cliente(String nome, String telefone, String cpf, String email) {
+    private int qtdEmprestimo = 0;
+    private int limiteEmprestimoSimultaneo;
+    
+    public Cliente(String nome, String telefone, String cpf, String email, int limiteEmprestimo) {
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
         this.email = email;
+        this.limiteEmprestimoSimultaneo = limiteEmprestimo;
     }
 
-    public ArrayList<Publicacao> getListaEmprestimo() {
-        return listaEmprestimo;
+    public int getQtdEmprestimo() {
+        return qtdEmprestimo;
+    }
+    public void setQtdEmprestimo(int qtd){
+        this.qtdEmprestimo = qtd;
     }
 
-    public void setListaEmprestimo(ArrayList<Publicacao> listaEmprestimo) {
-        this.listaEmprestimo = listaEmprestimo;
+    public int getLimiteEmprestimoSimultaneo() {
+        return limiteEmprestimoSimultaneo;
     }
 
-    private boolean possuiEmprestimo = false;
-    private boolean especial = false;
 
-    public boolean isEspecial() {
-        return especial;
-    }
-
-    public void setEspecial(boolean especial) {
-        this.especial = especial;
-    }
-
-    public void solicitarEmprestimo(Publicacao publi) {
-        this.listaEmprestimo.add(publi);
-    }
-
-    public void finalizarEmprestimo(Publicacao publi) {
-        this.listaEmprestimo.remove(publi);
-    }
-
-    public boolean isPossuiEmprestimo() {
-        return possuiEmprestimo;
-    }
-
-    public void setPossuiEmprestimo(boolean possuiEmprestimo) {
-        this.possuiEmprestimo = possuiEmprestimo;
-    }
+    public abstract boolean liberarEmprestimo();
 
     public String getNome() {
         return nome;

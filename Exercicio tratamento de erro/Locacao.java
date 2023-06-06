@@ -37,9 +37,5 @@ public class Locacao {
     public double getValorFinal() {
         return valorFinal;
     }
-
-    public void setValorFinal(double valorFinal) {
-        this.valorFinal = valorFinal;
-    }
     
 }

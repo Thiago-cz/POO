@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Biblioteca {
     private String nome, endereco;
     private ArrayList<Publicacao> conjuntoPubl = new ArrayList<>();
-    private ArrayList<Cliente> usuarios = new ArrayList<>();
+    private ArrayList<Cliente> clientes = new ArrayList<>();
 
     public Biblioteca(String nome, String endereco) {
         this.nome = nome;
@@ -34,12 +34,12 @@ public class Biblioteca {
         this.conjuntoPubl = conjuntoPubl;
     }
 
-    public ArrayList<Cliente> getUsuarios() {
-        return usuarios;
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
     }
 
-    public void setUsuarios(ArrayList<Cliente> usuarios) {
-        this.usuarios = usuarios;
+    public void setClientes(ArrayList<Cliente> usuarios) {
+        this.clientes = usuarios;
     }
 
 }

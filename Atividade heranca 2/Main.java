@@ -46,17 +46,16 @@ public class Main {
         biblioteca.getConjuntoPubl().add(artigo2);
         biblioteca.getConjuntoPubl().add(livro1);
         biblioteca.getConjuntoPubl().add(livro2);
-        biblioteca.getUsuarios().add(userEspecial2);
-        biblioteca.getUsuarios().add(userEspecial1);
-        biblioteca.getUsuarios().add(userComum1);
-        biblioteca.getUsuarios().add(userComum2);
+        biblioteca.getClientes().add(userEspecial2);
+        biblioteca.getClientes().add(userEspecial1);
+        biblioteca.getClientes().add(userComum1);
+        biblioteca.getClientes().add(userComum2);
 
-        Emprestimo emprestimo = new Emprestimo();
-        emprestimo.solicitarEmprest(tese1, userComum1);
-        emprestimo.solicitarEmprest(tese2, userComum1);
-        emprestimo.solicitarEmprest(tese2, userComum2);
-        emprestimo.solicitarEmprest(artigo1, userEspecial1);
-        emprestimo.solicitarEmprest(artigo2, userEspecial1);
-        emprestimo.solicitarEmprest(livro1, userEspecial2);
+        Emprestimo emprestimo1 = new Emprestimo(userComum1, tese1);
+        Emprestimo emprestimo2 = new Emprestimo(userComum1, tese2);
+        Emprestimo emprestimo3 = new Emprestimo(userComum2, tese2);
+        Emprestimo emprestimo4 = new Emprestimo(userEspecial1, artigo1);
+        Emprestimo emprestimo5 = new Emprestimo(userEspecial1, artigo2);
+        Emprestimo emprestimo6 = new Emprestimo(userEspecial2, livro1);
     }
 }

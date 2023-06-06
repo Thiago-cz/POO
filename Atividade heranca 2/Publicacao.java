@@ -1,4 +1,3 @@
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -8,16 +7,7 @@ public abstract class Publicacao {
     private ArrayList<Publicacao> referencias = new ArrayList<>();
     private ArrayList<Autor> autores = new ArrayList<>();
     private double valorMulta;
-    public double getValorMulta() {
-        return valorMulta;
-    }
-
-    public void setValorMulta(double valorMulta) {
-        this.valorMulta = valorMulta;
-    }
-
-    private boolean statusEmprestimo = false; // false = Nao Emprestado
-                                              // true = emprestado
+    private boolean disponibilidade = false; 
 
     public Publicacao(LocalDate dataPubli, String titulo, ArrayList<Publicacao> referencias, ArrayList<Autor> autores) {
         this.dataPubli = dataPubli;
@@ -32,6 +22,15 @@ public abstract class Publicacao {
         this.referencias = referencias;
         this.autores.add(autor);
     }
+
+    public double getValorMulta() {
+        return valorMulta;
+    }
+
+    public void setValorMulta(double valorMulta) {
+        this.valorMulta = valorMulta;
+    }
+
 
     public LocalDate getDataPubli() {
         return dataPubli;
@@ -57,6 +56,14 @@ public abstract class Publicacao {
         this.referencias = referencias;
     }
 
+    public void addReferencia(Publicacao publi){
+        this.referencias.add(publi);
+    }
+
+    public void removePublicacao(Publicacao publi){
+        this.referencias.remove(publi);
+    }
+
     public ArrayList<Autor> getAutores() {
         return autores;
     }
@@ -65,12 +72,20 @@ public abstract class Publicacao {
         this.autores = autores;
     }
 
-    public boolean isStatusEmprestimo() {
-        return statusEmprestimo;
+    public void addAutor(Autor autor){
+        this.autores.add(autor);
     }
 
-    public void setStatusEmprestimo(boolean statusEmprestimo) {
-        this.statusEmprestimo = statusEmprestimo;
+    public void removeAutor(Autor autor){
+        this.autores.remove(autor);
+    }
+
+    public boolean isDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(boolean statusEmprestimo) {
+        this.disponibilidade = statusEmprestimo;
     }
 
 }
