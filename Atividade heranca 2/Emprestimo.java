@@ -6,7 +6,7 @@ public class Emprestimo {
 
     public Emprestimo(Cliente usuario, Publicacao publicacao) {
 
- }
+    }
 
     public Cliente getUsuario() {
         return usuario;
